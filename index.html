@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Khirthika 🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120406;--card:#2a0a12;--wine:#800020;--rose:#c2185b;--blush:#ff8fa3;--text:#fbe9ec;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% 0,#3a0614,var(--bg) 60%);color:var(--text);font-family:Quicksand,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+section{min-height:100vh;padding:56px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;max-width:640px;margin:0 auto}
+h1,h2{font-family:'Great Vibes',cursive,serif;font-weight:400;color:var(--blush);margin:0 0 12px}
+h1{font-size:3.4rem}h2{font-size:2.5rem}
+p{margin:8px 0}
+button,.btn{background:linear-gradient(135deg,var(--wine),var(--rose));color:#fff;border:0;border-radius:999px;padding:13px 28px;font:600 1rem Quicksand,sans-serif;cursor:pointer;box-shadow:0 6px 20px #80002066;transition:transform .2s}
+button:active{transform:scale(.94)}
+.hint{opacity:.7;font-size:.9rem}
+.grid{display:grid;gap:12px;width:100%;margin-top:14px}
+.tile{background:var(--card);border:1px solid #80002099;border-radius:16px;padding:16px;cursor:pointer;min-height:64px}
+.tile .b{display:none;color:var(--blush);margin-top:8px}
+.tile.open .b{display:block;animation:pop .4s}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+#pup{font-size:5.5rem;cursor:pointer;user-select:none;transition:transform .15s;display:inline-block}
+#pup:active{transform:scale(1.25) rotate(-8deg)}
+#msg{min-height:3em;color:var(--blush)}
+.qa{width:100%;text-align:left;background:var(--card);border-radius:16px;padding:16px;margin-top:12px;border:1px solid #80002099}
+.qa label{display:block;margin-bottom:8px}
+textarea{width:100%;background:#120406;color:var(--text);border:1px solid var(--wine);border-radius:10px;padding:10px;font:inherit;min-height:70px;resize:vertical}
+.promise{background:var(--card);border-left:4px solid var(--rose);padding:14px 16px;border-radius:12px;text-align:left;margin:8px 0;width:100%}
+.poem{max-width:520px}
+.poem p.st{opacity:0;transform:translateY(14px);transition:all .9s;margin:0 0 22px;font-size:1.05rem}
+.poem p.st.in{opacity:1;transform:none}
+.petal{position:fixed;top:-30px;pointer-events:none;z-index:5;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:.2}}
+.lg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;width:100%;margin-top:14px}
+.lg div{background:var(--card);border:1px solid #80002099;border-radius:12px;padding:10px 8px;opacity:0;transform:scale(.9);transition:all .5s}
+.lg div.in{opacity:1;transform:none}
+.lg small{display:block;color:var(--blush);opacity:.8;font-size:.7rem}
+.lg span{font-size:1.02rem}
+</style>
+</head>
+<body>
+
+<section id="s1">
+  <div style="font-size:3rem">🌹</div>
+  <h1>Khirthika…</h1>
+  <p>I made something just for you.</p>
+  <p class="hint">Fair warning: your cheeks might turn red. 🙈</p>
+  <button onclick="go('s2');rain()">Open it 💌</button>
+</section>
+
+<section id="s2">
+  <h2>Things I notice</h2>
+  <p>Because I notice everything about you, and I never forget it.</p>
+  <div class="grid">
+    <div class="tile" onclick="this.classList.toggle('open')">🌹 Tap me<div class="b">Roses forever. I’ll remember that, always, even when you don’t remind me.</div></div>
+    <div class="tile" onclick="this.classList.toggle('open')">🖤 Tap me too<div class="b">Black and burgundy. Your colours are on every inch of this page, because they’re yours.</div></div>
+    <div class="tile" onclick="this.classList.toggle('open')">🐶 One more<div class="b">Puppies make you happy, so my heart is basically a puppy when it sees your name.</div></div>
+    <div class="tile" onclick="this.classList.toggle('open')">😊 Last one<div class="b">Your smile. I haven’t even seen it in person and it already turns my cheeks red.</div></div>
+  </div>
+  <button style="margin-top:22px" onclick="go('s3')">Next ↓</button>
+</section>
+
+<section id="s3">
+  <h2>Catch the puppy</h2>
+  <p>He loves you. Tap him <b>10 times</b> to collect hearts.</p>
+  <div id="pup" onclick="tap()">🐶</div>
+  <p>💖 <b id="cnt">0</b> / 10</p>
+  <p id="msg"></p>
+  <button id="nx3" style="display:none" onclick="go('s4')">Next ↓</button>
+</section>
+
+<section id="s4">
+  <h2>My promises</h2>
+  <div class="promise">🌹 I will never lie to you.</div>
+  <div class="promise">🌹 I will never hide things from you.</div>
+  <div class="promise">🌹 I will never ignore you. You’re always my first notification.</div>
+  <button style="margin-top:22px" onclick="go('s5')">Now your turn ↓</button>
+</section>
+
+<section id="s5">
+  <h2>Q &amp; A</h2>
+  <p>Answer honestly, I love honesty. 😌</p>
+  <form id="f" action="https://formspree.io/f/xzedyarq" method="POST" style="width:100%" onsubmit="return send(event)">
+  <div class="qa"><label>1. How much would you love me? 🥺</label><textarea name="Q1 How much would you love me" required></textarea></div>
+  <div class="qa"><label>2. What’s the plan when we are alone? 👀</label><textarea name="Q2 Plan when we are alone" required></textarea></div>
+  <div class="qa"><label>3. I love you baby, do you love me? 💕</label><textarea name="Q3 Do you love me" required></textarea></div>
+  <input type="hidden" name="_subject" value="Khirthika answered your questions 🌹">
+  <button type="submit" style="margin-top:18px">Send my answers 💌</button>
+  </form>
+  <p class="hint" id="cp">Your answers go straight to me 💕</p>
+  <button id="nx5" style="margin-top:14px;display:none" onclick="go('s5b')">One more surprise ↓</button>
+</section>
+
+<section id="s5b" style="max-width:760px">
+  <h2>I love you, in 120 languages</h2>
+  <p class="hint">One language isn’t enough for how much I mean it. 💖</p>
+  <div id="langs" class="lg"></div>
+  <button style="margin-top:22px" onclick="go('s6')">The last one ↓</button>
+</section>
+
+<section id="s6">
+  <h2>For you, Khirthika</h2>
+  <div class="poem" id="poem">
+<p class="st">My love, we haven’t met, not even once,<br>Yet you’ve become my moon, my stars, my sun.<br>I haven’t held your hand or felt your embrace,<br>But somehow, my heart has already found its place.</p>
+<p class="st">Your eyes hold a beauty I can’t explain,<br>Like little stars shining through the rain.<br>And that beautiful smile you give to me,<br>Turns my cheeks red and sets my heart free.</p>
+<p class="st">You smile, and suddenly, I forget what to say,<br>My heart starts melting in the sweetest way.<br>Even through a screen, you make my world glow,<br>With every little smile, you make me love you more.</p>
+<p class="st">I dream of the day when distance disappears,<br>When I can hold you close and whisper in your ears,<br>That the girl I loved without a touch,<br>Is the girl I’ve waited for, the girl I love so much.</p>
+<p class="st">I want to see your eyes when you’re standing near,<br>To wipe away your sadness and calm every fear.<br>To hold your hand, to hug you tight,<br>And tell you you’re my world, my stars, my light.</p>
+<p class="st">Some people need a thousand memories to fall in love,<br>But you became my everything without being here to touch.<br>Because love isn’t measured by the miles apart,<br>It’s measured by the place you occupy in my heart.</p>
+<p class="st">And if the world ever asks me what I see in you,<br>I’ll tell them there’s a whole universe in your eyes of blue—<br>Wait, no colour could describe your eyes just right,<br>No words could capture your smile’s pure light.</p>
+<p class="st">You’re more than a dream, more than words can convey,<br>You’re the girl I choose, every single day.<br>So until the day I finally see your face,<br>I’ll keep loving you through every mile of space.</p>
+<p class="st">And when I meet you, I’ll hold you and say,<br>“I’ve loved you from afar, but now you’re here to stay.<br>You’re the smile that makes me blush, the eyes where my dreams start,<br>And even before I met you, you already owned my heart.</p>
+<p class="st">You’re not just someone I love, not just a wish come true,<br>You’re my favourite part of life, my world, my everything too.<br>And if I could choose a thousand times, through every life I’d go,<br>I’d choose you, my beautiful girl, in every world I know.” ❤</p>
+<p class="st"><span style="font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--blush)">Roses forever, Khirthika 🌹</span></p>
+  </div>
+</section>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function rain(){for(let i=0;i<24;i++){const p=document.createElement('div');p.className='petal';p.textContent=['🌹','🥀','💖'][i%3];p.style.left=Math.random()*100+'vw';p.style.fontSize=(16+Math.random()*16)+'px';p.style.animationDuration=(4+Math.random()*4)+'s';p.style.animationDelay=Math.random()*2+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),10000)}}
+let n=0;const lines=['Aww, he’s happy! 🐾','He remembers you. 🐶','Tail wagging…','Okay he’s in love 💖','Halfway there!','He’s blushing too 🙈','He’d never ignore you.','Almost…','One more!','Mission complete! 🌹'];
+function tap(){if(n>=10)return;n++;document.getElementById('cnt').textContent=n;document.getElementById('msg').textContent=lines[n-1];rain();if(n==10){document.getElementById('msg').textContent='The puppy says: “Khirthika, you’re loved more than treats.” 🐶💖';document.getElementById('nx3').style.display='inline-block'}}
+function send(e){e.preventDefault();const f=e.target,c=document.getElementById('cp'),n=document.getElementById('nx5'),y=window.scrollY;c.textContent='Sending… 💌';fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(r=>{if(!r.ok)throw 0;c.textContent='Sent! 💕 Tap the button below when you’re ready.';f.reset()}).catch(()=>{copyA();c.textContent='Couldn’t send, but I copied your answers. Paste them to me 💕'}).finally(()=>{n.style.display='inline-block';window.scrollTo(0,y)});return false}
+function copyA(){const q=[...document.querySelectorAll('.qa')].map((d,i)=>d.querySelector('label').textContent+'\n'+d.querySelector('textarea').value).join('\n\n');const done=()=>document.getElementById('cp').textContent='Copied! Now paste it to me 💕';try{navigator.clipboard.writeText(q).then(done,()=>{})}catch(e){}}
+const L='English|I love you;Tamil|நான் உன்னை காதலிக்கிறேன்;Hindi|मैं तुमसे प्यार करता हूँ;Telugu|నేను నిన్ను ప్రేమిస్తున్నాను;Malayalam|ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു;Kannada|ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ;Bengali|আমি তোমাকে ভালোবাসি;Marathi|मी तुझ्यावर प्रेम करतो;Gujarati|હું તને પ્રેમ કરું છું;Punjabi|ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ;Urdu|میں تم سے محبت کرتا ہوں;Nepali|म तिमीलाई माया गर्छु;Sinhala|මම ඔබට ආදරෙයි;Spanish|Te quiero;French|Je t’aime;Italian|Ti amo;Portuguese|Eu te amo;German|Ich liebe dich;Dutch|Ik hou van jou;Swedish|Jag älskar dig;Norwegian|Jeg elsker deg;Danish|Jeg elsker dig;Finnish|Minä rakastan sinua;Icelandic|Ég elska þig;Irish|Tá grá agam duit;Scottish Gaelic|Tha gaol agam ort;Welsh|Dw i’n dy garu di;Russian|Я тебя люблю;Ukrainian|Я тебе кохаю;Polish|Kocham cię;Czech|Miluji tě;Slovak|Ľúbim ťa;Slovenian|Ljubim te;Croatian|Volim te;Serbian|Волим те;Bulgarian|Обичам те;Macedonian|Те сакам;Romanian|Te iubesc;Hungarian|Szeretlek;Greek|Σ’ αγαπώ;Turkish|Seni seviyorum;Albanian|Të dua;Latvian|Es tevi mīlu;Lithuanian|Aš tave myliu;Estonian|Ma armastan sind;Maltese|Inħobbok;Basque|Maite zaitut;Catalan|T’estimo;Galician|Quérote;Latin|Te amo;Esperanto|Mi amas vin;Arabic|أحبك;Hebrew|אני אוהב אותך;Persian|دوستت دارم;Kurdish|Ez te hez dikim;Armenian|Ես քեզ սիրում եմ;Georgian|მე შენ მიყვარხარ;Azerbaijani|Mən səni sevirəm;Kazakh|Мен сені жақсы көремін;Uzbek|Men seni sevaman;Mongolian|Би чамд хайртай;Mandarin|我爱你;Cantonese|我愛你;Japanese|愛してる;Korean|사랑해;Vietnamese|Anh yêu em;Thai|ฉันรักเธอ;Lao|ຂ້ອຍຮັກເຈົ້າ;Khmer|ខ្ញុំស្រលាញ់អ្នក;Burmese|ချစ်တယ်;Indonesian|Aku cinta kamu;Malay|Aku cinta padamu;Filipino|Mahal kita;Javanese|Aku tresna karo kowe;Sundanese|Abdi bogoh ka anjeun;Swahili|Nakupenda;Zulu|Ngiyakuthanda;Xhosa|Ndiyakuthanda;Afrikaans|Ek is lief vir jou;Yoruba|Mo nifẹ rẹ;Igbo|Hụrụ m gị n’anya;Hausa|Ina sonki;Amharic|እወድሻለሁ;Somali|Waan ku jeclahay;Shona|Ndinokuda;Malagasy|Tiako ianao;Twi|Me do wo;Wolof|Maa ngi lay bëgg;Kinyarwanda|Ndagukunda;Hawaiian|Aloha au iā ʻoe;Maori|Aroha au ki a koe;Samoan|ʻOu te alofa ia te oe;Tongan|ʻOku ou ʻofa ʻiate koe;Fijian|Au domoni iko;Tahitian|Ua here au ia oe;Haitian Creole|Mwen renmen w;Quechua|Munayqayki;Guarani|Rohayhu;Nahuatl|Nimitztlazohtla;Yiddish|איך האב דיך ליב;Luxembourgish|Ech hunn dech gäer;Frisian|Ik hâld fan dy;Breton|Da garout a ran;Corsican|Ti tengu caru;Sicilian|Ti vogghiu beni;Occitan|T’aimi;Faroese|Eg elski teg;Bosnian|Volim te;Belarusian|Я цябе кахаю;Tatar|Мин сине яратам;Tajik|Ман туро дӯст медорам;Pashto|زه تا سره مینه کوم;Sindhi|مان توکي پيار ڪريان ٿو;Assamese|মই তোমাক ভাল পাওঁ;Odia|ମୁଁ ତୁମକୁ ଭଲ ପାଏ;Uyghur|Men séni söyimen;Kyrgyz|Мен сени сүйөм;Turkmen|Men seni söýýärin;Cebuano|Gihigugma tika;Ilocano|Ay-ayaten ka'.split(';');
+L.forEach(s=>{const[a,b]=s.split('|');const d=document.createElement('div');d.innerHTML='<small></small><span></span>';d.firstChild.textContent=a;d.lastChild.textContent=b;document.getElementById('langs').appendChild(d)});
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
+document.querySelectorAll('.lg div').forEach(d=>io2.observe(d));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');if(e.target.closest('#poem')&&e.target===document.querySelector('#poem .st:last-child'))rain()}}),{threshold:.4});
+document.querySelectorAll('.st').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
